@@ -12,9 +12,9 @@
 #                           `git_release_enable = false`), so this only tags.
 #
 # Token note: PRs opened with the default GITHUB_TOKEN do NOT trigger other
-# workflows (so CI won't run on the release PR). To get CI on the release PR,
-# add a Personal Access Token or GitHub App token as the `RELEASE_PLZ_TOKEN`
-# secret; the job falls back to GITHUB_TOKEN when it is absent.
+# workflows (so CI won't run on the release PR), and this repository disallows
+# pull-request creation with that token. Configure `RELEASE_PLZ_TOKEN` as a
+# Personal Access Token or GitHub App token for release-plz PR creation.
 name: release-plz
 
 on:
@@ -47,7 +47,7 @@ jobs:
   release-plz-pr:
     name: release-plz PR
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'RawSocketLabs' }}
+    if: ${{ github.repository_owner == 'RawSocketLabs' && secrets.RELEASE_PLZ_TOKEN != '' }}
     concurrency:
       group: release-plz-${{ github.ref }}
       cancel-in-progress: false
@@ -60,4 +60,4 @@ jobs:
         with:
           command: release-pr
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
