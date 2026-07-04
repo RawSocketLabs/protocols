@@ -1,3 +1,6 @@
+> [!NOTE]
+> **This repository has moved.** Its crate(s) now live in the [`RawSocketLabs/rsl`](https://github.com/RawSocketLabs/rsl) monorepo, developed in lockstep and published independently. This repo is archived (read-only); development continues there.
+
 # protocols
 
 A Rust workspace of **from-scratch network-protocol implementations**, built for learning the
