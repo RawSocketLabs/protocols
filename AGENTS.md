@@ -133,12 +133,12 @@ corpus name once compliance tracking is wired.
 |---|---|---|---|---|
 | `link/ethertype` | link | 0.1.0 | functional | — |
 | `link/ethernet` | link | 0.1.0 | functional (frame codec + rawsock injection) | `ethernet` (IEEE 802.3) |
+| `link/arp` | link | 0.1.0 | functional (packet codec + rawsock injection) | `arp` (RFC 826) |
 | `transport/tcp` | transport | 0.1.0 | functional (header codec + options + rawsock injection) | `tcp` (RFC 9293) |
 | `transport/udp` | transport | 0.1.0 | functional (header codec + rawsock injection) | `udp` (RFC 768) |
 | `network/ip` | network | 0.1.0 | functional (header codec + rawsock injection) | `ip` (RFC 791) |
 | `network/icmp` | network | 0.1.0 | functional (header codec + rawsock injection) | `icmp` (RFC 792) |
 | `application/dns` | application | 0.1.0 | functional (codec + UDP resolver client) | `dns` (RFC 1034/1035) |
-| `link/arp` | link | — | planned | `arp` |
 | `session/socks`; `application/{tftp,smb,nbt,ssh,http,…}` | — | — | planned | — |
 
 The roadmap of protocols-to-come lives here, not as empty member dirs — a crate joins

@@ -3,6 +3,16 @@
 version = 4
 
 [[package]]
+name = "arp"
+version = "0.1.0"
+dependencies = [
+ "bitsandbytes",
+ "ethernet",
+ "ethertype",
+ "rawsock",
+]
+
+[[package]]
 name = "bitsandbytes"
 version = "0.2.0"
 source = "git+https://github.com/RawSocketLabs/bitsandbytes?rev=c39b19d77af9390192256279bdc9d40d29676312#c39b19d77af9390192256279bdc9d40d29676312"

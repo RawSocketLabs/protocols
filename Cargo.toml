@@ -4,6 +4,7 @@ members = [
     # link layer
     "link/ethertype",
     "link/ethernet",
+    "link/arp",
     # transport layer
     "transport/tcp",
     "transport/udp",
